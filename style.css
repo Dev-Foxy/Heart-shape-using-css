@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #111;
+}
+
+.heart{
+    fill: none;
+    stroke-width: 1px;
+    stroke: rgb(255,47,47);
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 7px #ff000d);
+}
+
+.heart path{
+    stroke-dasharray: 67;
+    stroke-dashoffset: 0;
+}
+
+.heart:hover path{
+    animation: animate-heart 2s linear forwards;
+}
+
+@keyframes animate-heart{
+    0%{
+        stroke-dashoffset: 0;
+    }
+
+    40%{
+        stroke-dashoffset: 67;
+    }
+
+    80%{
+        stroke-dashoffset: 134;
+        fill: transparent;
+    }
+
+    100%{
+        stroke-dashoffset: 134;
+        fill: rgb(255,47,47);
+    }
+}
